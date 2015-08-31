@@ -41,6 +41,7 @@ RSpec.describe AddressBook do
             expect(new_entry.email).to eq 'augusta.king@lovelace.com'
         end
     end
+<<<<<<< HEAD
     
     context "#import_from_csv" do
         it "imports the correct numbers of entries" do
@@ -89,6 +90,28 @@ RSpec.describe AddressBook do
         
     end
     
+=======
+    context "#binary_search" do
+        it "searches AddressBook for a non-existent entry" do
+            book.import_from_csv("entries.csv")
+            entry = book.binary_search("Dan")
+            expect(entry).to be_nil
+        end
+        
+        it "searches AddressBook for Bill" do
+            book.import_from_csv("entries.csv")
+            entry = book.binary_search("Bill")
+            expect(entry).to be_a Entry
+            check_entry(entry, "Bill", "555-555-4854", "bill@blocmail.com")
+        end
+        
+        it "searches AddressBook for Billy" do
+            book.import_from_csv("entries.csv")
+            entry = book.binary_search("Billy")
+            expect(entry).to be_nil
+        end
+    end
+>>>>>>> assignment-irb
 end
 
 
@@ -102,3 +125,14 @@ end
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+>>>>>>> assignment-irb

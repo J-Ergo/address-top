@@ -8,6 +8,7 @@ class AddressBook
         @entries = []
     end
     
+<<<<<<< HEAD
     def remove_entry(name, phone, email)
         delete_entry = nil
         
@@ -17,6 +18,26 @@ class AddressBook
                 end
             end
         @entries.delete_entry
+=======
+    def binary_search(name)
+        lower = 0
+        upper = entries.length - 1
+        
+        while lower <= upper
+            mid = (lower + upper) / 2
+            mid_name = entries[mid].name
+            
+            if name == mid_name
+                return entries[mid]
+            elsif name < mid_name
+                upper = mid - 1
+            elsif name > mid_name
+                lower = mid + 1
+            end
+        end
+        
+        return nil
+>>>>>>> assignment-irb
     end
     
     def add_entry(name, phone, email)
