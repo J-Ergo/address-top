@@ -1,1 +1,8 @@
-puts "Welcome to Address-top!"
+require_relative "controllers/menu_controller"
+
+menu = MenuController.new
+
+system "clear"
+puts "Welcome to AddressTop!"
+
+menu.main_menu
